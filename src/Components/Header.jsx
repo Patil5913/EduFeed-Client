@@ -10,6 +10,12 @@ const Header = () => {
     // Assuming the main page is "/" and login page is "/login"
     return !(location.pathname === "/" || location.pathname === "/login" || location.pathname === "/forgot");
   };
+  const handleClick = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("accessToken")
+    localStorage.removeItem("role");
+    window.location.href = "/";
+  };
 
   return (
     <header className="mb-1 my-3">
@@ -20,12 +26,12 @@ const Header = () => {
         </a>
         <div className="flex w-full justify-end gap-4">
           {shouldShowLoginButton() ? (
-            <Link
-              to="/logout"
+            <button
+              onClick={handleClick}
               className="relative border-2 border-dashed border-quaternary px-4 py-2 lg:px-10 lg:py-3 text-quaternary text-base font-bold overflow-hidden bg-transparent rounded-full transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#E5E3D4] before:to-[#c3ba76] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-full hover:before:left-0"
             >
               Logout
-            </Link>
+            </button>
           ) : (
             <Link
               to="/login"
