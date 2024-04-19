@@ -12,6 +12,7 @@ import Authority from "./Pages/Authority/Authority.jsx";
 import Error from "./Pages/Error/ErrorPage.jsx";
 // import { AuthProvider } from "./Store/Auth.jsx";
 import ForgetPass from "./Pages/ForgotPassword/ForgotPassword.jsx";
+import UploadCsv from "./Pages/Mentor/UploadCsv.jsx";
 import "./index.css";
 
 
@@ -26,6 +27,7 @@ const routes = (
       <Route path="mentor" element={<Mentor />} />
       <Route path="authority" element={<Authority />} />
       <Route path="forgot" element={<ForgetPass />} />
+      <Route path="upload" element={<UploadCsv />} />
       <Route path="*" element={<Error />} />
     </Route>
   </Routes>

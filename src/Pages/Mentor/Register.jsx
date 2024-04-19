@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "remixicon/fonts/remixicon.css";
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 
 const Register = () => {
@@ -40,33 +40,13 @@ const Register = () => {
         const data = await response.json();
         toast.success("User registered successfully!");
         console.log(data);
-      }
-      else if(response.status === 208) {
+      } else if (response.status === 208) {
         toast.error("User already exists!");
         console.log(response);
-      } 
-      else {
+      } else {
         console.error("Registration failed!");
         console.log(response);
         toast.error("Registration failed!");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-  const handleUpload = async (e) => {
-    const file = e.target.files[0];
-    try {
-      const formData = new FormData();
-      formData.append("file", file);
-      const response = await fetch("https://edufeed-backend.vercel.app/api/upload", {
-        method: "POST",
-        body: formData,
-      });
-      if (response.ok) {
-        console.log("File uploaded successfully");
-      } else {
-        console.error("Failed to upload file");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -256,7 +236,7 @@ const Register = () => {
               </select>
             </div>
           </div>
-        
+
           <div className="flex justify-center  w-full ">
             <button
               type="submit"
@@ -265,52 +245,13 @@ const Register = () => {
               Submit
             </button>
           </div>
-          </form>
-          <div className=" sm:w-3/4  items-center justify-between pb-16 sm:pb-0  space-y-4 sm:space-y-0">
-        
-          <ToastContainer />
-          <div class=" flex justify-end ">
-            <div class="relative group">
-              <label
-                for="dropzone-file"
-                class="flex flex-col items-center justify-center border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
-              >
-                <div class="flex flex-col items-center justify-center py-2 px-2 ">
-                  <svg
-                    class="w-5 h-5 mb-4 text-gray-500 dark:text-gray-400"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 20 16"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                    />
-                  </svg>
-                  <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                    <span class="font-semibold">Click to upload</span>{" "}
-                  </p>
-                  <p class="text-xs text-gray-500 dark:text-gray-400">
-                    Cvv (MAX. 800x400px)
-                  </p>
-                </div>
-                <input onChange={handleUpload} id="dropzone-file" type="file" class="hidden" />
-              </label>
-              <div class="absolute w-[20rem] bg-tertiary font-bold text-quaternary text-center text-xs rounded-lg py-2 right-0 bottom-full mb-3 opacity-0 group-hover:opacity-100 transition duration-200 ease-in-out">
-                <span className=" text-white">Field should contain:-</span>{" "}
-                Name, Email, Password, Prn, Branch, Currentsem,Role
-              </div>
-            </div>
-          </div>
+        </form>
+        <ToastContainer />
+        <div className="hover:brightness-110  font-bold py-3 px-6 rounded-full bg-gradient-to-r from-[#E5E3D4] to-[#c3ba76] text-quaternary ">
+          <Link to="/upload">Click here to upload csv</Link>
         </div>
-        
       </div>
     </>
   );
 };
-
 export default Register;
