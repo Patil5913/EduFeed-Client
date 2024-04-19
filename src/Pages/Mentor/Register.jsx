@@ -36,16 +36,18 @@ const Register = () => {
           body: JSON.stringify(formData),
         }
       );
-      if (response.status === 200) {
+      if (response.status === 201) {
         const data = await response.json();
         toast.success("User registered successfully!");
         console.log(data);
       }
       else if(response.status === 208) {
         toast.error("User already exists!");
+        console.log(response);
       } 
       else {
         console.error("Registration failed!");
+        console.log(response);
         toast.error("Registration failed!");
       }
     } catch (error) {
@@ -81,7 +83,7 @@ const Register = () => {
           </h1>
         </div>
         <form
-          action=""
+          onSubmit={handleSubmit}
           className="  w-full flex flex-col sm:flex-row justify-center items-center  sm:w-3/4 px-8 pb-5 sm:pb-10 sm:gap-5"
         >
           <div class="  py-8 px-8 text-base leading-6 space-y-6 text-gray-700 sm:text-lg sm:leading-7 w-full sm:px-5 ">
@@ -254,18 +256,19 @@ const Register = () => {
               </select>
             </div>
           </div>
-        </form>
-        <ToastContainer />
-        <div className=" sm:w-3/4  items-center justify-between pb-16 sm:pb-0  space-y-4 sm:space-y-0">
+        
           <div className="flex justify-center  w-full ">
             <button
-              onClick={handleSubmit}
+              type="submit"
               className="hover:brightness-110  font-bold py-3 px-6 rounded-full bg-gradient-to-r from-[#E5E3D4] to-[#c3ba76] text-quaternary"
             >
               Submit
             </button>
           </div>
-
+          </form>
+          <div className=" sm:w-3/4  items-center justify-between pb-16 sm:pb-0  space-y-4 sm:space-y-0">
+        
+          <ToastContainer />
           <div class=" flex justify-end ">
             <div class="relative group">
               <label
@@ -304,6 +307,7 @@ const Register = () => {
             </div>
           </div>
         </div>
+        
       </div>
     </>
   );
