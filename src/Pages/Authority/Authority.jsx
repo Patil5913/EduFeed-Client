@@ -31,9 +31,9 @@ const dataSem8 = [
 
 const CustomActiveShapePieChart = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-    <h1 className="text-2xl font-bold mb-4">Authority</h1>
-    <div className="w-full border border-gray-500 flex flex-wrap">
+    <div className=" flex flex-col items-center justify-center h-screen">
+    {/* <h1 className="text-2xl font-bold mb-4">Authority</h1> */}
+    <div className="w-full border border-gray-500 flex flex-wrap h-auto">
       <div className="w-1/2 h-1/2 border-r-2 border-black flex flex-col justify-center items-center">
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
@@ -50,7 +50,7 @@ const CustomActiveShapePieChart = () => {
             <Tooltip />
           </PieChart>
         </ResponsiveContainer>
-        <div className="text-center mt-2 font-bold mb-0">Sem 2</div> 
+        <div className="text-center mt-2 font-bold mb-0">{"respective sem "}</div> 
       </div>
       <div className="w-1/2 h-1/2 flex flex-col justify-center items-center">
         <ResponsiveContainer width="100%" height={300}>
@@ -68,7 +68,7 @@ const CustomActiveShapePieChart = () => {
             <Tooltip />
           </PieChart>
         </ResponsiveContainer>
-        <div className="text-center mt-2 font-bold mb-0">Sem 4</div> 
+        <div className="text-center mt-2 font-bold mb-0">{"respective sem "}</div> 
       </div>
       <div className="w-1/2 h-1/2 border-t-2 border-r-2 border-black flex flex-col justify-center items-center">
         <ResponsiveContainer width="100%" height={300}>
@@ -86,7 +86,7 @@ const CustomActiveShapePieChart = () => {
             <Tooltip />
           </PieChart>
         </ResponsiveContainer>
-        <div className="text-center mt-2 font-bold mb-0">Sem 6</div> 
+        <div className="text-center mt-2 font-bold mb-0">{"respective sem "}</div> 
       </div>
       <div className="w-1/2 h-1/2 border-t-2 border-black flex flex-col justify-center items-center">
         <ResponsiveContainer width="100%" height={300}>
@@ -104,7 +104,7 @@ const CustomActiveShapePieChart = () => {
             <Tooltip />
           </PieChart>
         </ResponsiveContainer>
-        <div className="text-center mt-2 font-bold mb-0">Sem 8</div>
+        <div className="text-center mt-2 font-bold mb-0">{"respective sem "}</div>
       </div>
     </div>
   </div>
