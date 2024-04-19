@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
   
@@ -34,12 +35,13 @@ const Login = () => {
           body: JSON.stringify(formData),
         }
       );
-      if (response.ok) {
+      if (response.status === 200) {
         const data = await response.json();
         const accessToken = data.accessToken;
         const role = data.role;
         localStorage.setItem("token", accessToken);
         localStorage.setItem("role", role);
+        toast.success("Login successful!");
         if(role === "student") {
           navigate("/student")
         } else if(role === "mentor") {
@@ -51,9 +53,20 @@ const Login = () => {
         else {
           console.error("Role not found!");
         }
-      } else {
+        
+      } else if (response.status === 401) {
         // Handle failed login
+        console.error("Incorrect Password!");
+        toast.error("Incorrect Password!");
+      }
+      else if(response.status === 404) {
+        console.error("User not found!");
+        toast.error("User not found!");
+      }
+      else {
+        
         console.error("Login failed!");
+        toast.error("Login failed!");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -146,6 +159,7 @@ const Login = () => {
           </button>
         </form>
       </div>
+      <ToastContainer />
     </>
   );
 };
