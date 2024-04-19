@@ -36,16 +36,18 @@ const Register = () => {
           body: JSON.stringify(formData),
         }
       );
-      if (response.status === 200) {
+      if (response.status === 201) {
         const data = await response.json();
         toast.success("User registered successfully!");
         console.log(data);
       }
       else if(response.status === 208) {
         toast.error("User already exists!");
+        console.log(response);
       } 
       else {
         console.error("Registration failed!");
+        console.log(response);
         toast.error("Registration failed!");
       }
     } catch (error) {
