@@ -70,8 +70,8 @@ const UploadCsv = () => {
                 >
                   Submit
                 </button>
-                <div className="absolute w-[20rem] bg-tertiary font-bold text-quaternary text-center text-xs rounded-lg py-2 right-10 left-10 bottom-full opacity-0 group-hover:opacity-100 transition duration-200 ease-in-out">
-                  <span className="text-white">Field should contain:-</span> Name, Email, Password,
+                <div className="absolute w-[20rem] bg-white font-bold text-quaternary text-center text-xs rounded-lg py-2 right-10 left-10 bottom-full opacity-0 group-hover:opacity-100 transition duration-200 ease-in-out border-dashed border-2">
+                  <span className="text-tertiary">Field should contain:-</span> Name, Email, Password,
                   Prn, Branch, Currentsem, Role
                 </div>
               </form>

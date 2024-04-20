@@ -64,7 +64,7 @@ const Register = () => {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="  w-full flex flex-col sm:flex-row justify-center items-center  sm:w-3/4 px-8 pb-5 sm:pb-10 sm:gap-5"
+          className="  w-full flex flex-col sm:flex-row justify-center items-center  sm:w-3/4 pl-8 pb-5 sm:pb-10 sm:gap-5 "
         >
           <div class="  py-8 px-8 text-base leading-6 space-y-6 text-gray-700 sm:text-lg sm:leading-7 w-full sm:px-5 ">
             <div class="relative">
@@ -237,7 +237,7 @@ const Register = () => {
             </div>
           </div>
 
-          <div className="flex justify-center  w-full ">
+          <div className="flex justify-center   ">
             <button
               type="submit"
               className="hover:brightness-110  font-bold py-3 px-6 rounded-full bg-gradient-to-r from-[#E5E3D4] to-[#c3ba76] text-quaternary"

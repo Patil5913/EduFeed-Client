@@ -82,38 +82,44 @@ function AddQuestion() {
   
 
   return (
-    <div className="max-w-md mx-auto my-8 p-4 rounded-2xl border-2">
+    <div className="md:w-[60%] w-full  overflow-x-scroll no-scrollbar  md:mx-auto mb-4 py-4 px-8 rounded-2xl border-2 ">
       {currentSubjectIndex < subjects.length ? (
         <div>
-          <h1 className="text-3xl font-serif font-semibold mb-4">
+          <h1 className="text-3xl font-serif font-semibold mb-4  border-b-2 p-2">
             {`Subject ${currentSubjectIndex + 1}`}
           </h1>
-          <input
-            className="border-b-2 bg-primary focus:border-blue-500 focus:outline-none rounded py-2 px-4 mb-4 w-full"
-            placeholder={`Subject ${currentSubjectIndex + 1}`}
-            value={subjects[currentSubjectIndex]}
-            onChange={(e) => handleChangeSubject(e, currentSubjectIndex)}
-          />
+          <div className="flex flex-col sm:flex-row items-center justify-center py-2 gap-2">
+    <h1 className="text-xl font-serif font-semibold mb-4">
+        Subject Name :-
+    </h1>
+    <input
+        className="border-2 bg-primary focus:border-blue-500 focus:outline-none rounded-full py-2 px-4 mb-4 w-full sm:w-[30%]"
+        placeholder={`Subject ${currentSubjectIndex + 1}`}
+        value={subjects[currentSubjectIndex]}
+        onChange={(e) => handleChangeSubject(e, currentSubjectIndex)}
+    />
+</div>
           {error && <p className="text-red-500 mb-4">{error}</p>}
           {[...Array(10)].map((_, i) => (
             <div key={i} className="flex items-center mb-4 gap-4">
-              <input
+            <span className="mr-2 font-bold">{`Q.${i + 1}`}</span>
+            <input
                 className="border-b-2 bg-primary focus:border-blue-500 focus:outline-none rounded py-2 px-4 mr-2 w-full"
                 placeholder={`Question ${i + 1}`}
                 value={questions[currentSubjectIndex * 10 + i]}
                 onChange={(e) => handleChangeQuestion(e, i)}
-              />
-            </div>
+            />
+        </div>
           ))}
           <div className="flex justify-between">
             <button
-              className="bg-red-400 hover:bg-red-700 text-white py-2 px-4 rounded-full"
+              className="bg-gradient-to-r from-[#edd1bc] to-[#f0a266] hover:bg-red-700 text-white py-2 px-4 rounded-full"
               onClick={handleAddQuestion}
             >
               Next Subject
             </button>
             <button
-              className="hover:brightness-110  font-bold py-3 px-6 rounded-full bg-gradient-to-r from-[#E5E3D4] to-[#c3ba76] text-quaternary"
+              className="hover:brightness-110  font-semibold py-3 px-6 rounded-full bg-gradient-to-r from-[#E5E3D4] to-[#c3ba76] text-quaternary"
               onClick={handleSubmit}
             >
               Submit
@@ -137,12 +143,12 @@ function AddQuestion() {
               </div>
             ))}
           </div>
-          <button
-            className="bg-red-400 hover:bg-red-700 text-white py-2 px-4 rounded-full"
+          {/* <button
+            className="bg-red-400 hover:bg-red-700 text-black py-2 px-4 rounded-full"
             onClick={handleAddSubject}
           >
             Add Subject
-          </button>
+          </button> */}
         </div>
         
       )}
