@@ -64,7 +64,6 @@ const Login = () => {
         toast.error("User not found!");
       }
       else {
-        
         console.error("Login failed!");
         toast.error("Login failed!");
       }
