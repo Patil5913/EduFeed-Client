@@ -21,7 +21,7 @@ const routes = (
   <Routes>
     <Route path="/" element={<App />}>
       <Route index element={<Home />} />
-      <Route path="academic" element={<FacultyFeedback />} />
+      <Route path="facultyfeedback" element={<FacultyFeedback />} />
       <Route path="register" element={<Register />} />
       <Route path="login" element={<Login />} />
       <Route path="student" element={<Student />} />
