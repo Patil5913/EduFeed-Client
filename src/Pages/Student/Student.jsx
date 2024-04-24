@@ -1,9 +1,9 @@
-import React from "react";
+import React  from "react";
 import "remixicon/fonts/remixicon.css";
-import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const Student = () => {
+
   return (
     <div className=" w-full h-full flex justify-center items-center flex-col my-8">
       <div className=" w-full h-11 flex justify-center items-center">

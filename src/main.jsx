@@ -15,7 +15,7 @@ import ForgetPass from "./Pages/ForgotPassword/ForgotPassword.jsx";
 import UploadCsv from "./Pages/Mentor/UploadCsv.jsx";
 import "./index.css";
 import AddQuestion from "./Pages/Mentor/AddQuestion.jsx";
-
+import { ToastContainer } from "react-toastify";
 
 const routes = (
   <Routes>
@@ -38,7 +38,9 @@ const routes = (
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <AuthProvider>
     <React.StrictMode>
+      <ToastContainer />
       <Router>{routes}</Router>
+      
     </React.StrictMode>
   // </AuthProvider>
 );
