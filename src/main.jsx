@@ -15,13 +15,13 @@ import ForgetPass from "./Pages/ForgotPassword/ForgotPassword.jsx";
 import UploadCsv from "./Pages/Mentor/UploadCsv.jsx";
 import "./index.css";
 import AddQuestion from "./Pages/Mentor/AddQuestion.jsx";
-
+import { ToastContainer } from "react-toastify";
 
 const routes = (
   <Routes>
     <Route path="/" element={<App />}>
       <Route index element={<Home />} />
-      <Route path="academic" element={<FacultyFeedback />} />
+      <Route path="facultyfeedback" element={<FacultyFeedback />} />
       <Route path="register" element={<Register />} />
       <Route path="login" element={<Login />} />
       <Route path="student" element={<Student />} />
@@ -38,7 +38,9 @@ const routes = (
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <AuthProvider>
     <React.StrictMode>
+      <ToastContainer />
       <Router>{routes}</Router>
+      
     </React.StrictMode>
   // </AuthProvider>
 );
