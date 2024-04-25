@@ -127,7 +127,7 @@ const FacultyFeedback = () => {
       </h1>
       <div className="flex justify-center">
         <div className="md:w-[70%] border-2 border-solid border-black py-3 px-5 md:px-0 mt-3 rounded-3xl">
-          <div className="flex justify-center space-x-4">
+          <div className="flex justify-center space-x-4 bg-red-300">
             {progressColors.map((color, index) => (
               <div
                 key={index}
@@ -136,7 +136,7 @@ const FacultyFeedback = () => {
             ))}
           </div>
 
-          <div className="flex justify-center mt-7 md:px-12 lg:h-[15%] h-fit">
+          <div className="flex justify-center mt-7 md:px-12 lg:h-[15%] h-fit ">
             <div className="w-5 h-5 flex mr-5 mt-2">
               <i className="ri-circle-fill"></i>
             </div>
@@ -145,12 +145,12 @@ const FacultyFeedback = () => {
             </p>
           </div>
 
-          <div className="space-y-5 px-4 sm:px-6 md:px-0 md:ml-24 my-5">
+          <div className="space-y-3 px-4 sm:px-6 md:px-0 md:ml-24 my-5">
             {optionLabels.map((label, index) => (
               <div
                 key={index}
                 className={`flex items-center border-2 border-gray-200 dark:border-gray-700 rounded-full px-2 w-full sm:w-3/4 lg:w-[25%] ${
-                  selectedOption === index + 1 ? "bg-blue-500 text-green" : ""
+                  selectedOption === index + 1 ? " text-[#c3ba76]" : ""
                 }`}
                 onClick={() => handleOptionSelect(index + 1)}
               >
@@ -160,7 +160,7 @@ const FacultyFeedback = () => {
                   name="bordered-radio"
                   className="w-5 h-5 text-black"
                 />
-                <label className="font-serif uppercase p-3 ml-2 text-sm font-medium flex-1 flex justify-start items-center rounded-full">
+                <label className="font-serif uppercase p-3 ml-2 text-xs font-medium flex-1 flex justify-start items-center rounded-full">
                   {label}
                 </label>
               </div>
@@ -169,8 +169,8 @@ const FacultyFeedback = () => {
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <div className=" w-[70%] space-x-6">
+      <div className="flex justify-center mt-2 ">
+        <div className=" w-[70%]   flex justify-end items-center">
           {isQuestionsEnd ? (
             <button
               onClick={handleSubmit}
@@ -187,7 +187,7 @@ const FacultyFeedback = () => {
               }`}
               disabled={isNextDisabled}
             >
-              //mt-2 flex justify-end
+             
               Next
             </button>
           )}
